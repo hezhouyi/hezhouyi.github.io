@@ -12,10 +12,10 @@
 == Research exprience
 *Prof. [http://haibinsu.people.ust.hk Haibin Su]'s research group, department of chemistry, HKUST*\n
 - Evolution of CRISPR Cas9 systems in streptococcus genus ~ ~ ~ ~ 06\/2020 - 05\/2021\n
-Statistical coupling analysis is applied to retrieve sectors, which are the evolutionary units of 3-D structure that could reflect their evolutionary histories. Besides, A domain motion dependent model is proposed to link the mutations in Cas9 protein and kinetic changes. We found the relation of mutations in key residues and off-target effects, which also suggests that there exists a negative relation between accuracy and efficiency.
+Statistical coupling analysis is applied to retrieve sectors, which are the evolutionary units of 3-D structure that could reflect their evolutionary histories. Besides, A conformation-dependent model is proposed to link the mutations in Cas9 protein and kinetic changes. We found the relation of mutations in key residues and off-target effects, which also suggests that there exists a negative relation between accuracy and efficiency.
 
 - Dynamic Expedition of Leading Mutations in SARS-CoV-2 Spike Protein ~ ~ ~ ~ 05\/2021 - 01\/2022\n
-During the ongoing CoVID-19 epidemic, the continuous genomic evolution of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has been generating new variants with enhanced transmissibility and immune escape. Being one key target of antibodies, mutations of the spike glycoprotein play a vital role in the trajectory of virus evasion. Here, we present a time-resolved statistical method, dynamic expedition of leading mutations (deLemus), to analyze the evolution dynamics of the spike protein. Together with analysis on single amino-acid polymorphism (SAP), we proposed one L-index to quantify the mutation strength of each amino acid for unravelling mutation pattern of spike glycoprotein. The sites of interest (SOI) with high L-index hold great promise to detect potential signal of emergent variants.
+During the ongoing CoVID-19 epidemic, the continuous genomic evolution of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has been generating new variants with enhanced transmissibility and immune escape. Being one key target of antibodies, mutations of the spike glycoprotein play a vital role in the trajectory of virus evasion. Here, we present a time-resolved statistical method, dynamic expedition of leading mutations (deLemus), to analyze the evolution dynamics of the spike protein. Together with analysis on single amino-acid polymorphism (SAP), we proposed one L-index to quantify the mutation strength of each amino acid for unravelling the mutation pattern of spike glycoprotein. The sites of interest (SOI) with high L-index hold great promise to detect the potential signal of emergent variants.
 
 *Prof. [http://staff.ustc.edu.cn/~xz58/ Xiao Zheng ]'s research group, department of chemical physics, USTC*\n
 - Unit Cell Consistency of Maximally Localized Wannier Functions ~ ~ ~ ~ 03\/2019 - 06\/2019\n
@@ -23,7 +23,7 @@ Theoretical derivation and computation validation of unit cell consistency of ML
 
 *Prof. [https://small.hkust.edu.hk/Members.html Jinqing Huang ]'s research group, department of chemistry, HKUST*\n
 - Chemical-Physical and Aggregation Properties of alpha-synuclein ~ ~ ~ ~ 07\/2018 - 08\/2018\n
-Structural characterization of toxic oligomers to properties of single molecule alpha-synuclein using Optical Tweezers and Ramon Spectroscopy.
+Structural characterization of toxic oligomers to properties of single-molecule alpha-synuclein using Optical Tweezers and Ramon Spectroscopy.
 
 *Prof. [http://staff.ustc.edu.cn/~junling/index.html Junling Lu]'s research group, department of chemical physics, USTC*\n
 - Synthesis of single-atom catalyst with Pt atomic layer deposition on g-C3N4. ~ ~ ~ ~ 03\/2017 - 06\/2018\n
@@ -36,9 +36,9 @@ Structural characterization of toxic oligomers to properties of single molecule 
 == Knowledge & Skills
 - Chemical Physics: Biophysics, Physical Chemistry, Reaction Dynamics, Quantum Physics, Statistical mechanics, Markov chain, etc.
 - Computational Chemistry: Monte Carlo, Molecular Dynamics, Density Functional Theory, etc.
-- Computational Biology: Bioimformatics, Statistical Coupling Analysis, Direct Coupling Analisys, etc.
-- Quantitative and Systems Biology: Growth model, Moran model, Quasispecies equation, Clonal Interference Evolutionary Game thoery, etc.
-- Software/Coding: Python, MATLAB, Mathematia, C, Latex, Origin, Gaussian, Gromacs, Wannier 90, Pymol, BLAST, MSA tools, etc.
+- Computational Biology: Bioinformatics, Statistical Coupling Analysis, Direct Coupling Analysis, etc.
+- Quantitative and Systems Biology: Growth model, Moran model, Quasispecies equation, Clonal Interference Evolutionary Game theory, etc.
+- Software/Coding: Python, MATLAB, Mathematica, C, Latex, Origin, Gaussian, Gromacs, Wannier 90, Pymol, BLAST, MSA tools, etc.
 
 
 == Honor & Service
@@ -46,7 +46,7 @@ Structural characterization of toxic oligomers to properties of single molecule 
 - National Endeavor Scholarship @USTC  2016, 2018\n
 - Outstanding student Scholarship @USTC 2016, 2018 \n
 - Second Prize in 28th China Chemistry Olympic Competition 2014\n
-- Championship and organizer in univeristy basketball competition @USTC 2017\n
+- Championship and organizer in university basketball competition @USTC 2017\n
 - Leader of teaching volunteers of aid education @Western Hunan 2015\n
 
 == Hobby
