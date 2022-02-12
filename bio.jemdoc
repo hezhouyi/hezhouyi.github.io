@@ -2,25 +2,54 @@
 = Resume
 
 == Education
-*University of Science and Technology of China*\n
-- B.Sc. in Chemical Physics~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~Aug 2015 - Jun 2019\n
+*[https://hkust.edu.hk/home Hong Kong University of Science and Technology] (HKUST)*\n
+- M.Phil. in Chemistry (Computational Biology)~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~08\/2019 - 06\/2022
 
-*Hong Kong University of Science and Technology*\n
-- Summer research ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~Jun  2018 - Aug 2018 & Mar 2019 - Jun 2019
-- M.Phil. Student in Theoretical Chemistry ~ ~ ~ Aug 2019 --- Present
+*[https://en.ustc.edu.cn University of Science and Technology of China] (USTC)*\n
+- B.Sc. in Chemical Physics (Theoretical Chemistry) ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~08\/2015 - 06\/2019
 
-== Honors
-- Postgraduate Studentship of HKUST 2019\n
-- National Endeavor Scholarship of USTC 2016 & 2018\n
-- Outstanding student scholarship	of USTC 2016 & 2018\n
-- Second Prize in 28th China Chemistry Olympic Competition 2014\n
 
-== Social Service
-- Teaching Volunteer of aid education in remote area, as  Team Leader\n
-Primary school, Longshan county, western Hunan,China~ ~ ~ ~ Jul 2015 - Aug2015\n
-Overcome many difficulties since the teaching and living conditions were really poor; organized a fun sports competition and the final farewell party, which is indeed an unforgettable experience for me.
+== Research exprience
+*Prof. [http://haibinsu.people.ust.hk Haibin Su]'s research group, department of chemistry, HKUST*\n
+- Evolution of CRISPR Cas9 systems in streptococcus genus ~ ~ ~ ~ 06\/2020 - 05\/2021\n
+Statistical coupling analysis is applied to retrieve sectors, which are the evolutionary units of 3-D structure that could reflect their evolutionary histories. Besides, A domain motion dependent model is proposed to link the mutations in Cas9 protein and kinetic changes. We found the relation of mutations in key residues and off-target effects, which also suggests that there exists a negative relation between accuracy and efficiency.
+
+- Dynamic Expedition of Leading Mutations in SARS-CoV-2 Spike Protein ~ ~ ~ ~ 05\/2021 - 01\/2022\n
+During the ongoing CoVID-19 epidemic, the continuous genomic evolution of severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has been generating new variants with enhanced transmissibility and immune escape. Being one key target of antibodies, mutations of the spike glycoprotein play a vital role in the trajectory of virus evasion. Here, we present a time-resolved statistical method, dynamic expedition of leading mutations (deLemus), to analyze the evolution dynamics of the spike protein. Together with analysis on single amino-acid polymorphism (SAP), we proposed one L-index to quantify the mutation strength of each amino acid for unravelling mutation pattern of spike glycoprotein. The sites of interest (SOI) with high L-index hold great promise to detect potential signal of emergent variants.
+
+*Prof. [http://staff.ustc.edu.cn/~xz58/ Xiao Zheng ]'s research group, department of chemical physics, USTC*\n
+- Unit Cell Consistency of Maximally Localized Wannier Functions ~ ~ ~ ~ 03\/2019 - 06\/2019\n
+Theoretical derivation and computation validation of unit cell consistency of MLWFs, which provided a theoretical foundation for further developments of material computation.
+
+*Prof. [https://small.hkust.edu.hk/Members.html Jinqing Huang ]'s research group, department of chemistry, HKUST*\n
+- Chemical-Physical and Aggregation Properties of alpha-synuclein ~ ~ ~ ~ 07\/2018 - 08\/2018\n
+Structural characterization of toxic oligomers to properties of single molecule alpha-synuclein using Optical Tweezers and Ramon Spectroscopy.
+
+*Prof. [http://staff.ustc.edu.cn/~junling/index.html Junling Lu]'s research group, department of chemical physics, USTC*\n
+- Synthesis of single-atom catalyst with Pt atomic layer deposition on g-C3N4. ~ ~ ~ ~ 03\/2017 - 06\/2018\n
 
 == Publication
-- Xiaolong Yang, Zhouyi He, Zheng Xiao 2019 Electron. Struct. in press~[https://doi.org/10.1088/2516-1075/ab5e5a]\n
-\n
+- [https://doi.org/10.1088/2516-1075/ab5e5a Yang, Xiaolong, Zhouyi He, and Xiao Zheng. "Unit cell consistency of maximally localized Wannier functions." Electronic Structure 2.1 (2020): 014001. ]
+
+- [https://doi.org/10.1101/2021.12.29.474427 He, Zhouyi, et al. "Dynamic Expedition of Leading Mutations in SARS-CoV-2 Spike Glycoproteins." bioRxiv (2021).] (Preprint, under review)
+
+== Knowledge & Skills
+- Chemical Physics: Biophysics, Physical Chemistry, Reaction Dynamics, Quantum Physics, Statistical mechanics, Markov chain, etc.
+- Computational Chemistry: Monte Carlo, Molecular Dynamics, Density Functional Theory, etc.
+- Computational Biology: Bioimformatics, Statistical Coupling Analysis, Direct Coupling Analisys, etc.
+- Quantitative and Systems Biology: Growth model, Moran model, Quasispecies equation, Clonal Interference Evolutionary Game thoery, etc.
+- Software/Coding: Python, MATLAB, Mathematia, C, Latex, Origin, Gaussian, Gromacs, Wannier 90, Pymol, BLAST, MSA tools, etc.
+
+
+== Honor & Service
+- Postgraduate Studentship @HKUST, 2019-2022\n
+- National Endeavor Scholarship @USTC  2016, 2018\n
+- Outstanding student Scholarship @USTC 2016, 2018 \n
+- Second Prize in 28th China Chemistry Olympic Competition 2014\n
+- Championship and organizer in univeristy basketball competition @USTC 2017\n
+- Leader of teaching volunteers of aid education @Western Hunan 2015\n
+
+== Hobby
+- Photography, Literature, Hiking, Basketball, etc.
+
 See more in my academic [./resume.pdf CV ].\n
