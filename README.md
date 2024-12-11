@@ -1,5 +1,3 @@
 # hezhouyi.github.io
 
-To run jemdoc, frist activiate Python 2 environment by: conda activate py2
-Then rum command: python jemdoc.py index.jemdoc
-To deactiviate Python 2:conda deactivate
+Hi, this is Zhouyi He's personal github, it contains my personal webpage and also research data needed for publications.
