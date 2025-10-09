@@ -1,509 +1,847 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>photography</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
-html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
-iframe { margin: auto; }
-a.url { word-break: break-all; }
-a:active, a:hover { outline: 0px; }
-.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
-#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
-#write.first-line-indent p { text-indent: 2em; }
-#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
-#write.first-line-indent li { margin-left: 2em; }
-.for-image #write { padding-left: 8px; padding-right: 8px; }
-body.typora-export { padding-left: 30px; padding-right: 30px; }
-.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
-@media screen and (max-width: 500px) { 
-  body.typora-export { padding-left: 0px; padding-right: 0px; }
-  #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
-}
-#write li > figure:last-child { margin-bottom: 0.5rem; }
-#write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
-button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
-input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
-*, ::after, ::before { box-sizing: border-box; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
-#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
-p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
-p { orphans: 4; }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
-h6 { font-size: 1rem; }
-.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
-.hidden { display: none; }
-.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
-#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
-figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
-tr { break-inside: avoid; break-after: auto; }
-thead { display: table-header-group; }
-table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
-table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
-.CodeMirror-linenumber { }
-.CodeMirror { text-align: left; }
-.CodeMirror-placeholder { opacity: 0.3; }
-.CodeMirror pre { padding: 0px 4px; }
-.CodeMirror-lines { padding: 0px; }
-div.hr:focus { cursor: none; }
-#write pre { white-space: pre-wrap; }
-#write.fences-no-line-wrapping pre { white-space: pre; }
-#write pre.ty-contain-cm { white-space: normal; }
-.CodeMirror-gutters { margin-right: 4px; }
-.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
-.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
-#write .md-fences.mock-cm { white-space: pre-wrap; }
-.md-fences.md-fences-with-lineno { padding-left: 0px; }
-#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
-.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
-.CodeMirror-line, twitterwidget { break-inside: avoid; }
-.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
-.footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
-li div { padding-top: 0px; }
-blockquote { margin: 1rem 0px; }
-li .mathjax-block, li p { margin: 0.5rem 0px; }
-li { margin: 0px; position: relative; }
-blockquote > :last-child { margin-bottom: 0px; }
-blockquote > :first-child, li > :first-child { margin-top: 0px; }
-.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
-#write .footnote-line { white-space: pre-wrap; }
-@media print { 
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
-  html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
-  .typora-export #write::after { height: 0px; }
-}
-.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
-a img, img a { cursor: pointer; }
-pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
-p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
-p > .md-image:only-child { display: inline-block; width: 100%; }
-#write .MathJax_Display { margin: 0.8em 0px 0px; }
-.md-math-block { width: 100%; }
-.md-math-block:not(:empty)::after { display: none; }
-[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
-.md-task-list-item { position: relative; list-style-type: none; }
-.task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
-.math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
-.md-toc-content { position: relative; margin-left: 0px; }
-.md-toc-content::after, .md-toc::after { display: none; }
-.md-toc-item { display: block; color: rgb(65, 131, 196); }
-.md-toc-item a { text-decoration: none; }
-.md-toc-inner:hover { text-decoration: underline; }
-.md-toc-inner { display: inline-block; cursor: pointer; }
-.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
-.md-toc-h2 .md-toc-inner { margin-left: 2em; }
-.md-toc-h3 .md-toc-inner { margin-left: 4em; }
-.md-toc-h4 .md-toc-inner { margin-left: 6em; }
-.md-toc-h5 .md-toc-inner { margin-left: 8em; }
-.md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
-  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
-  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
-  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
-  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
-}
-a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
-.footnote-line a:not(.reversefootnote) { color: inherit; }
-.md-attr { display: none; }
-.md-fn-count::after { content: "."; }
-code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
-.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
-code { text-align: left; }
-a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
-.md-inline-math .MathJax_SVG .noError { display: none !important; }
-.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
-.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
-.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
-.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
-.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
-.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
-.MathJax_SVG * { transition: none; }
-.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
-.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
-.md-diagram-panel > svg { max-width: 100%; }
-[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
-[lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom-width: 0px; }
-video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
-.highlight td, .highlight tr { border: 0px; }
-svg[id^="mermaidChart"] { line-height: 1em; }
-mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
-.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
-mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
-
-
-:root {
-    --side-bar-bg-color: #fafafa;
-    --control-text-color: #777;
-}
-
-@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-html {
-    font-size: 16px;
-}
-
-body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.6;
-}
-
-#write {
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 30px;
-    padding-bottom: 100px;
-}
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
-}
-
-a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
-h1 {
-    padding-bottom: .3em;
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-   padding-bottom: .3em;
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-}
-
-li p.first {
-    display: inline-block;
-}
-ul,
-ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-blockquote {
-    border-left: 4px solid #dfe2e5;
-    padding: 0 15px;
-    color: #777777;
-}
-blockquote blockquote {
-    padding-right: 0;
-}
-table {
-    padding: 0;
-    word-break: initial;
-}
-table tr {
-    border-top: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 0;
-}
-table tr:nth-child(2n),
-thead {
-    background-color: #f8f8f8;
-}
-table tr th {
-    font-weight: bold;
-    border: 1px solid #dfe2e5;
-    border-bottom: 0;
-    margin: 0;
-    padding: 6px 13px;
-}
-table tr td {
-    border: 1px solid #dfe2e5;
-    margin: 0;
-    padding: 6px 13px;
-}
-table tr th:first-child,
-table tr td:first-child {
-    margin-top: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-    margin-bottom: 0;
-}
-
-.CodeMirror-lines {
-    padding-left: 4px;
-}
-
-.code-tooltip {
-    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
-    border-top: 1px solid #eef2f2;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #e7eaed;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-code {
-    background-color: #f3f4f4;
-    padding: 0 2px 0 2px;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
-
-
-.md-task-list-item > input {
-  margin-left: -1.3em;
-}
-
-@media print {
-    html {
-        font-size: 13px;
-    }
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-    pre {
-        word-wrap: break-word;
-    }
-}
-
-.md-fences {
-	background-color: #f8f8f8;
-}
-#write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
-}
-
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
-}
-
-.md-mathjax-midline {
-    background: #fafafa;
-}
-
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
-}
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    /*border: 1px solid #ddd;*/
-    border-radius: 3px;
-    padding: 2px 0px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
-}
-
-.md-tag {
-    color: #a7a7a7;
-    opacity: 1;
-}
-
-.md-toc { 
-    margin-top:20px;
-    padding-bottom:20px;
-}
-
-.sidebar-tabs {
-    border-bottom: none;
-}
-
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-}
-
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
-}
-
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
-}
-
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
-}
-
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state{
-    visibility: visible;
-}
-
-.mac-seamless-mode #typora-sidebar {
-    background-color: #fafafa;
-    background-color: var(--side-bar-bg-color);
-}
-
-.md-lang {
-    color: #b4654d;
-}
-
-.html-for-mac .context-menu {
-    --item-hover-bg-color: #E6F0FE;
-}
-
-#md-notification .btn {
-    border: 0;
-}
-
-.dropdown-menu .divider {
-    border-color: #e5e5e5;
-}
-
-.ty-preferences .window-content {
-    background-color: #fafafa;
-}
-
-.ty-preferences .nav-group-item.active {
-    color: white;
-    background: #999;
-}
-
- .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joey's Photo Gallery ~</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h1><a name="shot-on-ae-1phttpsglobalcanonzhc-museumproductfilm103html" class="md-header-anchor"></a><span>Shot On </span><a href='https://global.canon/zh/c-museum/product/film103.html'><span>AE-1P</span></a></h1><h2><a name="hk-ust" class="md-header-anchor"></a><span>HK-UST</span></h2><p><img src="./image/26920024.JPG" referrerpolicy="no-referrer" alt="26920024"></p><p><img src="./image/26920023.JPG" referrerpolicy="no-referrer" alt="26920023"></p><p><img src="./image/26920020.JPG" referrerpolicy="no-referrer" alt="26920020"></p><p><img src="./image/26920019.JPG" referrerpolicy="no-referrer" alt="26920019"></p><p><img src="./image/26920013.JPG" referrerpolicy="no-referrer" alt="26920013"></p><p><img src="./image/26920012.JPG" referrerpolicy="no-referrer" alt="26920012"></p><p><img src="./image/26960037.JPG" referrerpolicy="no-referrer" alt="26920002"></p><p><img src="./image/26960036.JPG" referrerpolicy="no-referrer" alt="26960036"></p><p><img src="./image/26960029.JPG" referrerpolicy="no-referrer" alt="26960029"></p><p><img src="./image/26960024.JPG" referrerpolicy="no-referrer" alt="26960024"></p><p><img src="./image/26960020.JPG" referrerpolicy="no-referrer" alt="26960020"></p><p><img src="./image/26960015.JPG" referrerpolicy="no-referrer" alt="26960015"></p><p><img src="./image/26940007.JPG" referrerpolicy="no-referrer" alt="26940007"></p><p>&nbsp;</p><h2><a name="ustc" class="md-header-anchor"></a><span>USTC</span></h2><p><img src="./image/000031040032.jpg" referrerpolicy="no-referrer" alt="000031040032"></p><p><img src="./image/000031040030.JPG" referrerpolicy="no-referrer" alt="000031040030"></p><p><img src="./image/26950038.JPG" referrerpolicy="no-referrer" alt="000031040009"></p><p><img src="./image/26950031.JPG" referrerpolicy="no-referrer" alt="26950031"></p><p><img src="./image/26950028.JPG" referrerpolicy="no-referrer" alt="26950028"></p><p><img src="./image/26950024.JPG" referrerpolicy="no-referrer" alt="26950024"></p><p><img src="./image/26950023.JPG" referrerpolicy="no-referrer" alt="26950023"></p><p><img src="./image/26950013.JPG" referrerpolicy="no-referrer" alt="26950013"></p><p><img src="./image/26950011.JPG" referrerpolicy="no-referrer" alt="26950011"></p><p><img src="./image/26950010.JPG" referrerpolicy="no-referrer" alt="26950010"></p><p><img src="./image/26950008.JPG" referrerpolicy="no-referrer" alt="26950008"></p><p><img src="./image/26950005.JPG" referrerpolicy="no-referrer" alt="26950005"></p><h2><a name="hainan" class="md-header-anchor"></a><span>Hainan​</span></h2><p><img src="./image/000031030011.JPG" referrerpolicy="no-referrer" alt="000031030011"></p><p><img src="./image/000031030002.jpg" referrerpolicy="no-referrer" alt="000031030002"></p><p><img src="./image/000031020029.jpg" referrerpolicy="no-referrer" alt="000031020029"></p><p><img src="./image/000031020028.jpg" referrerpolicy="no-referrer" alt="000031020028"></p><p><img src="./image/000031020027.jpg" referrerpolicy="no-referrer" alt="000031020027"></p><p><img src="./image/000031020015.JPG" referrerpolicy="no-referrer" alt="000031020015"></p><p><img src="./image/000031020008.JPG" referrerpolicy="no-referrer" alt="000031020008"></p><p><img src="./image/000031020007.JPG" referrerpolicy="no-referrer" alt="000031020007"></p><p><img src="./image/000031020006.JPG" referrerpolicy="no-referrer" alt="000031020006"></p><h2><a name="portrait" class="md-header-anchor"></a><span>Portrait</span></h2><p><img src="./image/26930023.JPG" referrerpolicy="no-referrer" alt="26930023"></p><p><img src="./image/26930015.JPG" referrerpolicy="no-referrer" alt="26930015"></p><p><img src="./image/26930009.JPG" referrerpolicy="no-referrer" alt="26930009"></p><p><img src="./image/26930007.JPG" referrerpolicy="no-referrer" alt="26930007"></p><p><img src="./image/26930004.JPG" referrerpolicy="no-referrer" alt="26930004"></p><p><span>See more at my </span><a href='https://www.douban.com/people/146090118/photos'><span>Album</span></a><span>.</span></p></div>
+<body>
+    <h1>Welcome to Joey's Photo Gallery</h1>
+    <p>Click on any image to view it in full size, hope you will enjoy ~(d＇∀＇d)~ </p>
+    <div class="gallery">
+        <a target="_blank" href="image/AmsterdamBiker.JPEG">
+            <img src="image/AmsterdamBiker.JPEG" alt="AmsterdamBiker">
+        </a>
+        <div class="description">AmsterdamBiker</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/AmsterdamEvening.JPEG">
+            <img src="image/AmsterdamEvening.JPEG" alt="AmsterdamEvening">
+        </a>
+        <div class="description">AmsterdamEvening</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/AmsterdamTram.JPEG">
+            <img src="image/AmsterdamTram.JPEG" alt="AmsterdamTram">
+        </a>
+        <div class="description">AmsterdamTram</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/AmsterdamTulip.jpeg">
+            <img src="image/AmsterdamTulip.jpeg" alt="AmsterdamTulip">
+        </a>
+        <div class="description">AmsterdamTulip</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BOSTON.JPG">
+            <img src="image/BOSTON.JPG" alt="BOSTON">
+        </a>
+        <div class="description">BOSTON</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Bacelona.JPG">
+            <img src="image/Bacelona.JPG" alt="Bacelona">
+        </a>
+        <div class="description">Bacelona</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BacelonaSurfing.JPG">
+            <img src="image/BacelonaSurfing.JPG" alt="BacelonaSurfing">
+        </a>
+        <div class="description">BacelonaSurfing</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BostonFishMarket.jpg">
+            <img src="image/BostonFishMarket.jpg" alt="BostonFishMarket">
+        </a>
+        <div class="description">BostonFishMarket</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BostonWaldenPond.JPG">
+            <img src="image/BostonWaldenPond.JPG" alt="BostonWaldenPond">
+        </a>
+        <div class="description">BostonWaldenPond</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BostonWaldenPond1.JPG">
+            <img src="image/BostonWaldenPond1.JPG" alt="BostonWaldenPond1">
+        </a>
+        <div class="description">BostonWaldenPond1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BroklynBridge.jpg">
+            <img src="image/BroklynBridge.jpg" alt="BroklynBridge">
+        </a>
+        <div class="description">BroklynBridge</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Budapest.JPG">
+            <img src="image/Budapest.JPG" alt="Budapest">
+        </a>
+        <div class="description">Budapest</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/BuedapestBridge.JPG">
+            <img src="image/BuedapestBridge.JPG" alt="BuedapestBridge">
+        </a>
+        <div class="description">BuedapestBridge</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Changsha.JPG">
+            <img src="image/Changsha.JPG" alt="Changsha">
+        </a>
+        <div class="description">Changsha</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DC.jpg">
+            <img src="image/DC.jpg" alt="DC">
+        </a>
+        <div class="description">DC</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Dresden._Zwinger_&_Sophienkirche._-_Detroit_Publishing_Co.jpg">
+            <img src="image/Dresden._Zwinger_&_Sophienkirche._-_Detroit_Publishing_Co.jpg" alt="Dresden._Zwinger_&_Sophienkirche._-_Detroit_Publishing_Co">
+        </a>
+        <div class="description">Dresden._Zwinger_&_Sophienkirche._-_Detroit_Publishing_Co</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Dresden.jpg">
+            <img src="image/Dresden.jpg" alt="Dresden">
+        </a>
+        <div class="description">Dresden</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenChirstmas.jpg">
+            <img src="image/DresdenChirstmas.jpg" alt="DresdenChirstmas">
+        </a>
+        <div class="description">DresdenChirstmas</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenChurch.jpg">
+            <img src="image/DresdenChurch.jpg" alt="DresdenChurch">
+        </a>
+        <div class="description">DresdenChurch</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenElbe.JPEG">
+            <img src="image/DresdenElbe.JPEG" alt="DresdenElbe">
+        </a>
+        <div class="description">DresdenElbe</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenElbeOldTown.jpg">
+            <img src="image/DresdenElbeOldTown.jpg" alt="DresdenElbeOldTown">
+        </a>
+        <div class="description">DresdenElbeOldTown</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenEvening.JPG">
+            <img src="image/DresdenEvening.JPG" alt="DresdenEvening">
+        </a>
+        <div class="description">DresdenEvening</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenEvening1.JPG">
+            <img src="image/DresdenEvening1.JPG" alt="DresdenEvening1">
+        </a>
+        <div class="description">DresdenEvening1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenFrauenKirche.jpg">
+            <img src="image/DresdenFrauenKirche.jpg" alt="DresdenFrauenKirche">
+        </a>
+        <div class="description">DresdenFrauenKirche</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenIPF.jpeg">
+            <img src="image/DresdenIPF.jpeg" alt="DresdenIPF">
+        </a>
+        <div class="description">DresdenIPF</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenMoon.JPEG">
+            <img src="image/DresdenMoon.JPEG" alt="DresdenMoon">
+        </a>
+        <div class="description">DresdenMoon</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenMoonGirl.JPG">
+            <img src="image/DresdenMoonGirl.JPG" alt="DresdenMoonGirl">
+        </a>
+        <div class="description">DresdenMoonGirl</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenMyself.jpg">
+            <img src="image/DresdenMyself.jpg" alt="DresdenMyself">
+        </a>
+        <div class="description">DresdenMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenMyself1.heic">
+            <img src="image/DresdenMyself1.heic" alt="DresdenMyself1">
+        </a>
+        <div class="description">DresdenMyself1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenOldTown.JPG">
+            <img src="image/DresdenOldTown.JPG" alt="DresdenOldTown">
+        </a>
+        <div class="description">DresdenOldTown</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenOldTown2.JPG">
+            <img src="image/DresdenOldTown2.JPG" alt="DresdenOldTown2">
+        </a>
+        <div class="description">DresdenOldTown2</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenPainting.jpg">
+            <img src="image/DresdenPainting.jpg" alt="DresdenPainting">
+        </a>
+        <div class="description">DresdenPainting</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenPalaisSommer.JPG">
+            <img src="image/DresdenPalaisSommer.JPG" alt="DresdenPalaisSommer">
+        </a>
+        <div class="description">DresdenPalaisSommer</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenSheep.JPG">
+            <img src="image/DresdenSheep.JPG" alt="DresdenSheep">
+        </a>
+        <div class="description">DresdenSheep</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenStreeArtist.jpg">
+            <img src="image/DresdenStreeArtist.jpg" alt="DresdenStreeArtist">
+        </a>
+        <div class="description">DresdenStreeArtist</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenStreet.jpg">
+            <img src="image/DresdenStreet.jpg" alt="DresdenStreet">
+        </a>
+        <div class="description">DresdenStreet</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenSun.jpg">
+            <img src="image/DresdenSun.jpg" alt="DresdenSun">
+        </a>
+        <div class="description">DresdenSun</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenTram.jpg">
+            <img src="image/DresdenTram.jpg" alt="DresdenTram">
+        </a>
+        <div class="description">DresdenTram</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenTramMyself.JPG">
+            <img src="image/DresdenTramMyself.JPG" alt="DresdenTramMyself">
+        </a>
+        <div class="description">DresdenTramMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenWheat.JPG">
+            <img src="image/DresdenWheat.JPG" alt="DresdenWheat">
+        </a>
+        <div class="description">DresdenWheat</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/DresdenWildWide.jpg">
+            <img src="image/DresdenWildWide.jpg" alt="DresdenWildWide">
+        </a>
+        <div class="description">DresdenWildWide</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Goelitz.jpg">
+            <img src="image/Goelitz.jpg" alt="Goelitz">
+        </a>
+        <div class="description">Goelitz</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/GrosseGarten.jpg">
+            <img src="image/GrosseGarten.jpg" alt="GrosseGarten">
+        </a>
+        <div class="description">GrosseGarten</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Guilin.JPG">
+            <img src="image/Guilin.JPG" alt="Guilin">
+        </a>
+        <div class="description">Guilin</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Guilin1.JPG">
+            <img src="image/Guilin1.JPG" alt="Guilin1">
+        </a>
+        <div class="description">Guilin1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKBuilding.jpg">
+            <img src="image/HKBuilding.jpg" alt="HKBuilding">
+        </a>
+        <div class="description">HKBuilding</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKCakeShop.jpg">
+            <img src="image/HKCakeShop.jpg" alt="HKCakeShop">
+        </a>
+        <div class="description">HKCakeShop</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKCarTrajac.JPG">
+            <img src="image/HKCarTrajac.JPG" alt="HKCarTrajac">
+        </a>
+        <div class="description">HKCarTrajac</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKCentral.jpg">
+            <img src="image/HKCentral.jpg" alt="HKCentral">
+        </a>
+        <div class="description">HKCentral</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKChoiHung.JPG">
+            <img src="image/HKChoiHung.JPG" alt="HKChoiHung">
+        </a>
+        <div class="description">HKChoiHung</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKCyberpunk.JPEG">
+            <img src="image/HKCyberpunk.JPEG" alt="HKCyberpunk">
+        </a>
+        <div class="description">HKCyberpunk</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKDay.JPG">
+            <img src="image/HKDay.JPG" alt="HKDay">
+        </a>
+        <div class="description">HKDay</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKEvening.jpg">
+            <img src="image/HKEvening.jpg" alt="HKEvening">
+        </a>
+        <div class="description">HKEvening</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKFamily.JPG">
+            <img src="image/HKFamily.JPG" alt="HKFamily">
+        </a>
+        <div class="description">HKFamily</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKHikingMyself.JPG">
+            <img src="image/HKHikingMyself.JPG" alt="HKHikingMyself">
+        </a>
+        <div class="description">HKHikingMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKLiyumen.jpg">
+            <img src="image/HKLiyumen.jpg" alt="HKLiyumen">
+        </a>
+        <div class="description">HKLiyumen</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKLiyumen1.jpg">
+            <img src="image/HKLiyumen1.jpg" alt="HKLiyumen1">
+        </a>
+        <div class="description">HKLiyumen1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKManInOcean.JPG">
+            <img src="image/HKManInOcean.JPG" alt="HKManInOcean">
+        </a>
+        <div class="description">HKManInOcean</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKManWithPhone.JPEG">
+            <img src="image/HKManWithPhone.JPEG" alt="HKManWithPhone">
+        </a>
+        <div class="description">HKManWithPhone</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKPIgTiger.JPG">
+            <img src="image/HKPIgTiger.JPG" alt="HKPIgTiger">
+        </a>
+        <div class="description">HKPIgTiger</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKSea.jpeg">
+            <img src="image/HKSea.jpeg" alt="HKSea">
+        </a>
+        <div class="description">HKSea</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKShop.jpg">
+            <img src="image/HKShop.jpg" alt="HKShop">
+        </a>
+        <div class="description">HKShop</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKSigns.jpg">
+            <img src="image/HKSigns.jpg" alt="HKSigns">
+        </a>
+        <div class="description">HKSigns</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKSkyBuilding.jpg">
+            <img src="image/HKSkyBuilding.jpg" alt="HKSkyBuilding">
+        </a>
+        <div class="description">HKSkyBuilding</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKStreet.jpg">
+            <img src="image/HKStreet.jpg" alt="HKStreet">
+        </a>
+        <div class="description">HKStreet</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKSuicideCliff.JPG">
+            <img src="image/HKSuicideCliff.JPG" alt="HKSuicideCliff">
+        </a>
+        <div class="description">HKSuicideCliff</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKSunset.jpg">
+            <img src="image/HKSunset.jpg" alt="HKSunset">
+        </a>
+        <div class="description">HKSunset</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKUST.jpg">
+            <img src="image/HKUST.jpg" alt="HKUST">
+        </a>
+        <div class="description">HKUST</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKUSTBBallTeam.jpg">
+            <img src="image/HKUSTBBallTeam.jpg" alt="HKUSTBBallTeam">
+        </a>
+        <div class="description">HKUSTBBallTeam</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKUnderBridge.jpg">
+            <img src="image/HKUnderBridge.jpg" alt="HKUnderBridge">
+        </a>
+        <div class="description">HKUnderBridge</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HKVictoriaHabour.JPEG">
+            <img src="image/HKVictoriaHabour.JPEG" alt="HKVictoriaHabour">
+        </a>
+        <div class="description">HKVictoriaHabour</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Hainan.jpg">
+            <img src="image/Hainan.jpg" alt="Hainan">
+        </a>
+        <div class="description">Hainan</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Hambrug.JPG">
+            <img src="image/Hambrug.JPG" alt="Hambrug">
+        </a>
+        <div class="description">Hambrug</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Harvard.JPG">
+            <img src="image/Harvard.JPG" alt="Harvard">
+        </a>
+        <div class="description">Harvard</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HarvardArtsMuseum.jpg">
+            <img src="image/HarvardArtsMuseum.jpg" alt="HarvardArtsMuseum">
+        </a>
+        <div class="description">HarvardArtsMuseum</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HarvardMeissen.jpg">
+            <img src="image/HarvardMeissen.jpg" alt="HarvardMeissen">
+        </a>
+        <div class="description">HarvardMeissen</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HavardDynasour.jpg">
+            <img src="image/HavardDynasour.jpg" alt="HavardDynasour">
+        </a>
+        <div class="description">HavardDynasour</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Hefei.JPG">
+            <img src="image/Hefei.JPG" alt="Hefei">
+        </a>
+        <div class="description">Hefei</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/HefeiMyself.JPG">
+            <img src="image/HefeiMyself.JPG" alt="HefeiMyself">
+        </a>
+        <div class="description">HefeiMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg">
+            <img src="image/Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project.jpg" alt="Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project">
+        </a>
+        <div class="description">Johan_Christian_Dahl_-_View_of_Dresden_by_Moonlight_-_Google_Art_Project</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Koenigsee.jpg">
+            <img src="image/Koenigsee.jpg" alt="Koenigsee">
+        </a>
+        <div class="description">Koenigsee</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/KunmingPapaMama.jpg">
+            <img src="image/KunmingPapaMama.jpg" alt="KunmingPapaMama">
+        </a>
+        <div class="description">KunmingPapaMama</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Malaga.jpg">
+            <img src="image/Malaga.jpg" alt="Malaga">
+        </a>
+        <div class="description">Malaga</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Malaga1.jpg">
+            <img src="image/Malaga1.jpg" alt="Malaga1">
+        </a>
+        <div class="description">Malaga1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/MalagaMoon.jpg">
+            <img src="image/MalagaMoon.jpg" alt="MalagaMoon">
+        </a>
+        <div class="description">MalagaMoon</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/MattFarewell.jpg">
+            <img src="image/MattFarewell.jpg" alt="MattFarewell">
+        </a>
+        <div class="description">MattFarewell</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/MeissenSchloss.jpg">
+            <img src="image/MeissenSchloss.jpg" alt="MeissenSchloss">
+        </a>
+        <div class="description">MeissenSchloss</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Moritzburg.JPG">
+            <img src="image/Moritzburg.JPG" alt="Moritzburg">
+        </a>
+        <div class="description">Moritzburg</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCCentralPark.jpg">
+            <img src="image/NYCCentralPark.jpg" alt="NYCCentralPark">
+        </a>
+        <div class="description">NYCCentralPark</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCLiberty.JPG">
+            <img src="image/NYCLiberty.JPG" alt="NYCLiberty">
+        </a>
+        <div class="description">NYCLiberty</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCMyself.JPG">
+            <img src="image/NYCMyself.JPG" alt="NYCMyself">
+        </a>
+        <div class="description">NYCMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCSkyline.jpg">
+            <img src="image/NYCSkyline.jpg" alt="NYCSkyline">
+        </a>
+        <div class="description">NYCSkyline</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCStockExchange.JPG">
+            <img src="image/NYCStockExchange.JPG" alt="NYCStockExchange">
+        </a>
+        <div class="description">NYCStockExchange</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NYCTimesSquare.JPG">
+            <img src="image/NYCTimesSquare.JPG" alt="NYCTimesSquare">
+        </a>
+        <div class="description">NYCTimesSquare</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/NeuSchwanStein.jpg">
+            <img src="image/NeuSchwanStein.jpg" alt="NeuSchwanStein">
+        </a>
+        <div class="description">NeuSchwanStein</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Oslo.jpg">
+            <img src="image/Oslo.jpg" alt="Oslo">
+        </a>
+        <div class="description">Oslo</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Oslo1.jpg">
+            <img src="image/Oslo1.jpg" alt="Oslo1">
+        </a>
+        <div class="description">Oslo1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Oslo2.jpg">
+            <img src="image/Oslo2.jpg" alt="Oslo2">
+        </a>
+        <div class="description">Oslo2</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Oslo3.jpg">
+            <img src="image/Oslo3.jpg" alt="Oslo3">
+        </a>
+        <div class="description">Oslo3</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Poland.JPG">
+            <img src="image/Poland.JPG" alt="Poland">
+        </a>
+        <div class="description">Poland</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Prag.JPG">
+            <img src="image/Prag.JPG" alt="Prag">
+        </a>
+        <div class="description">Prag</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/SaltzburgMyself.jpg">
+            <img src="image/SaltzburgMyself.jpg" alt="SaltzburgMyself">
+        </a>
+        <div class="description">SaltzburgMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Sofia.jpg">
+            <img src="image/Sofia.jpg" alt="Sofia">
+        </a>
+        <div class="description">Sofia</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Sofia1.jpg">
+            <img src="image/Sofia1.jpg" alt="Sofia1">
+        </a>
+        <div class="description">Sofia1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Stockholm.jpg">
+            <img src="image/Stockholm.jpg" alt="Stockholm">
+        </a>
+        <div class="description">Stockholm</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Stockholm1.jpg">
+            <img src="image/Stockholm1.jpg" alt="Stockholm1">
+        </a>
+        <div class="description">Stockholm1</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Stones.jpg">
+            <img src="image/Stones.jpg" alt="Stones">
+        </a>
+        <div class="description">Stones</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/USTC.JPG">
+            <img src="image/USTC.JPG" alt="USTC">
+        </a>
+        <div class="description">USTC</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/USTC321.jpg">
+            <img src="image/USTC321.jpg" alt="USTC321">
+        </a>
+        <div class="description">USTC321</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/USTCGraduation.JPG">
+            <img src="image/USTCGraduation.JPG" alt="USTCGraduation">
+        </a>
+        <div class="description">USTCGraduation</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Utrecht.jpg">
+            <img src="image/Utrecht.jpg" alt="Utrecht">
+        </a>
+        <div class="description">Utrecht</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Vienna.jpg">
+            <img src="image/Vienna.jpg" alt="Vienna">
+        </a>
+        <div class="description">Vienna</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/ViennaMyself.jpg">
+            <img src="image/ViennaMyself.jpg" alt="ViennaMyself">
+        </a>
+        <div class="description">ViennaMyself</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/YongzhouPapaMama.jpg">
+            <img src="image/YongzhouPapaMama.jpg" alt="YongzhouPapaMama">
+        </a>
+        <div class="description">YongzhouPapaMama</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Zandavart.jpg">
+            <img src="image/Zandavart.jpg" alt="Zandavart">
+        </a>
+        <div class="description">Zandavart</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/Zurich.JPG">
+            <img src="image/Zurich.JPG" alt="Zurich">
+        </a>
+        <div class="description">Zurich</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/ZurichChurch.jpg">
+            <img src="image/ZurichChurch.jpg" alt="ZurichChurch">
+        </a>
+        <div class="description">ZurichChurch</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/ZurichETH.jpg">
+            <img src="image/ZurichETH.jpg" alt="ZurichETH">
+        </a>
+        <div class="description">ZurichETH</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="image/ZurichSkyline.jpg">
+            <img src="image/ZurichSkyline.jpg" alt="ZurichSkyline">
+        </a>
+        <div class="description">ZurichSkyline</div>
+    </div>
+
 </body>
 </html>

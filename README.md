@@ -58,3 +58,40 @@ README of the original jemdoc
 > 
 > Much more info at http://jemdoc.jaboc.net/.
 
+# Photo Gallery Generator
+
+This project automatically generates an HTML photo gallery from images in a folder.
+
+## Setup Instructions
+
+1. **Create an `image` folder** in this directory:
+   ```bash
+   mkdir image
+   ```
+
+2. **Add your images** to the `image` folder (supports JPG, PNG, GIF, BMP, WEBP)
+
+3. **Run the Python script** to generate the gallery:
+   ```bash
+   python generate_gallery.py
+   ```
+
+4. **Open `index.html`** in your browser to view the gallery
+
+## Files
+
+- `generate_gallery.py` - Python script that scans the image folder and generates HTML
+- `style.css` - Stylesheet for the gallery (modern, responsive design)
+- `index.html` - Generated HTML file (created after running the script)
+
+## Features
+
+- Automatically loops through all images in the `image/` folder
+- Creates gallery items with clickable thumbnails
+- Displays image names as descriptions
+- Hover effects and responsive design
+- Title: "Photo Gallery"
+
+## Re-generating
+
+Whenever you add or remove images, just run `python generate_gallery.py` again to update the gallery.
