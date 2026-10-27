@@ -28,6 +28,20 @@ All of these can be done in the GitHub web editor (open the file, click the penc
   starting with `/`, spelled exactly as on GitHub (spaces allowed, upper/lower case matters):
   `/profile.jpg`, `/Zhouyi He.pdf`, `/image`, `/resume.html`.
 
+**Writing the settings.** Everything between the two `---` lines at the top of a file in
+`content/` is written in [YAML](https://yaml.org) (search for "YAML" when in doubt):
+
+- One setting per line: `name: "Zhouyi He"`. Putting the text in "double quotes" is always
+  safe, and needed when it contains a colon `:` or starts with `[`, `{`, `*`, `@` or `'`.
+- A `"` inside the text: put the text in 'single quotes' instead (`'The "sticker" model'`),
+  or write `\"`, or use curly quotes “ ”.
+- Indent with spaces, never tabs; lines that belong to the same entry start at the same column.
+- Each item of a list starts with `- `; short lists can also be written as `[a, b]`.
+- To leave something out, delete its line or write `""`.
+
+Text below the closing `---` (such as the About text) is Markdown: `**bold**`, `*italic*`,
+`[text](link)`.
+
 If something is wrong (a missing file, a typo in the settings), the build stops with a
 message saying which file and line to fix, and the site online stays as it was. The
 message is at the top of the failed run in the repository's **Actions** tab.
