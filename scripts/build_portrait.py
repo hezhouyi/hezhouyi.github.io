@@ -25,7 +25,7 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "assets" / "img" / "portrait.jpg"
 DATA = ROOT / "site" / "_data" / "generated" / "portrait.json"
-BOX = (660, 880)  # the photo is shown 220 x 293 px
+BOX = (792, 1056)  # the photo is shown 264 x 352 px
 
 
 def main():
