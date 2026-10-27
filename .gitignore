@@ -10,8 +10,8 @@ site/assets/gallery/
 site/_data/generated/
 site/assets/img/portrait.jpg
 
-# Design drafts: generated thumbnails
-draft/thumbs/
+# Design drafts
+draft/
 
 # Python bytecode caches (from running the scripts locally)
 __pycache__/
