@@ -5,6 +5,8 @@
   --text: #111;
   --muted: #666;
   --faint: #999;
+  --authors: #555;         /* papers: author lists (7.5:1 on white) */
+  --venue: #767676;        /* papers: journal line — the lightest gray that stays easy to read (4.5:1) */
   --rule: #e8e8e8;
   --bg: #fff;
   --accent: #16a34a;       /* green: dots, focus rings — decorative only */
@@ -167,10 +169,10 @@ p { margin: 0 0 14px; }
 .pubs li { display: grid; grid-template-columns: 36px minmax(0, 1fr); margin-bottom: 26px; }
 .pubs li:last-child { margin-bottom: 0; }
 .pub-n { color: var(--faint); font-size: 17px; padding-top: 2px; font-variant-numeric: tabular-nums; }
-.pub-title { font-size: 23px; font-weight: 700; line-height: 1.45; margin-bottom: 4px; }
-.pub-authors { color: var(--muted); font-size: 18px; font-weight: 500; line-height: 1.4; }
+.pub-title { font-size: 23px; font-weight: 700; line-height: 1.45; margin-bottom: 6px; }
+.pub-authors { color: var(--authors); font-size: 18px; font-weight: 400; line-height: 1.4; }
 .pub-authors .me { color: var(--text); font-weight: 700; }
-.pub-venue { color: var(--muted); font-size: 18px; font-weight: 400; }
+.pub-venue { color: var(--venue); font-size: 16.5px; font-weight: 400; }
 .pub-summary { font-size: 18px; line-height: 1.55; margin: 6px 0 0; }
 .tag {
   display: inline-block; vertical-align: 2px; margin-left: 6px;

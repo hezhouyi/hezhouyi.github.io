@@ -11,6 +11,6 @@ layout: null
   {%- endfor %}
   <url>
     <loc>{{ site.data.content.cv.pdf | link | absolute_url }}</loc>
-    <lastmod>{{ site.data.generated.build.cv_updated | default: site.time | date: "%Y-%m-%d" }}</lastmod>
+    <lastmod>{{ site.data.cv_updated | default: site.time | date: "%Y-%m-%d" }}</lastmod>
   </url>
 </urlset>

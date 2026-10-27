@@ -11,6 +11,7 @@
 # allowed), e.g. "/profile.jpg". Templates pass them through `link`.
 require "date"
 require "kramdown"
+require "open3"
 require "yaml"
 
 module ContentFolder
@@ -59,7 +60,22 @@ module ContentFolder
         data, body = ContentFolder.read(path)
         site.data["content"][name] = ContentFolder.clean(data.merge("body" => body)) || {}
       end
+      # "Last updated" on the Resume page: when the CV PDF was last committed. Looked up
+      # on every build, so `jekyll serve` shows the same date as the published site.
+      site.data["cv_updated"] = ContentFolder.last_commit_date(site.data.dig("content", "cv", "pdf"))
     end
+  end
+
+  # The date (YYYY-MM-DD) of the last commit that changed a file given as in
+  # content/ ("/Zhouyi He.pdf"); nil when git or the file's history is not available.
+  def self.last_commit_date(location)
+    return nil unless location
+    path = location.to_s.b.gsub(/%\h\h/n) { |m| m[1, 2].hex.chr }.force_encoding("UTF-8").delete_prefix("/")
+    out, status = Open3.capture2("git", "log", "-1", "--format=%cs", "--", path, chdir: File.dirname(DIR))
+    date = out.strip
+    status.success? && !date.empty? ? date : nil
+  rescue SystemCallError
+    nil
   end
 
   # Liquid filters for short texts written in Markdown inside the front matter.

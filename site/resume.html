@@ -3,14 +3,14 @@ layout: default
 title: Resume
 ---
   {%- comment -%}
-    The PDF is the file at the "pdf:" path set in content/cv.md. "Last updated"
-    comes from _data/generated/build.yml: the date of the last commit to that PDF.
+    The PDF is the file at the "pdf:" path set in content/cv.md. "Last updated" is
+    the date of the last commit to that PDF (site.data.cv_updated, _plugins/content.rb).
   {%- endcomment -%}
   {%- assign cv_pdf = site.data.content.cv.pdf | link | relative_url %}
   <div class="page-head tight">
     <h1>Resume</h1>
-    {%- if site.data.generated.build.cv_updated %}
-    <p class="lede">Last updated {{ site.data.generated.build.cv_updated | date: "%B %Y" }}.</p>
+    {%- if site.data.cv_updated %}
+    <p class="lede">Last updated {{ site.data.cv_updated | date: "%B %Y" }}.</p>
     {%- endif %}
     <div class="actions pdf-open">
       <a class="button primary" href="{{ cv_pdf }}" target="_blank" rel="noopener">Open in new tab ↗</a>
