@@ -1,0 +1,8 @@
+{%- comment -%}
+  Structured data for search engines: who Zhouyi He is, and which profiles
+  (sameAs) belong to the same person — this is what tells him apart from
+  other people with the same name. Built from content/seo.md by _plugins/seo.rb.
+{%- endcomment -%}
+<script type="application/ld+json">
+{{ site.data.content | person_jsonld }}
+</script>

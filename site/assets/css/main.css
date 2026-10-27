@@ -1,0 +1,303 @@
+/* Site stylesheet — white background, black text, a little green accent, top navigation. */
+
+:root {
+  --text: #111;
+  --muted: #666;
+  --faint: #999;
+  --rule: #e8e8e8;
+  --bg: #fff;
+  --accent: #16a34a;       /* green: dots, focus rings — decorative only */
+  --accent-ink: #15803d;   /* darker green for text (5.0:1 on white) */
+  --accent-soft: #f0fdf4;  /* tinted backgrounds */
+  --accent-line: #bbf7d0;
+  --page: 960px;
+  --label: 168px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+          "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 var(--font);
+  overflow-x: clip;  /* the header's full-width background must not cause sideways scrolling */
+  overflow-wrap: anywhere;  /* a word or link longer than the line breaks instead of being cut off */
+}
+
+a { color: inherit; text-decoration: underline; text-decoration-color: #c4c4c4; text-underline-offset: 3px; }
+a:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- Header ---------- */
+
+/* Sticky: while scrolling, the top 24px of padding slides away and a compact bar stays. */
+.site-header {
+  position: sticky;
+  top: -24px;
+  z-index: 5;
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 36px 16px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+}
+
+/* Full-width white background behind the header; a hairline fades in once the page scrolls */
+.site-header::before {
+  content: ""; position: absolute; z-index: -1;
+  top: 0; bottom: 0; left: calc(50% - 50vw); right: calc(50% - 50vw);
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  animation: header-rule linear both;
+  animation-timeline: scroll();
+  animation-range: 0 40px;
+}
+@keyframes header-rule { to { border-bottom-color: var(--rule); } }
+
+.site-title { font-size: 17px; font-weight: 700; text-decoration: none; }
+.site-title:hover { color: var(--text); }
+.site-title .cn { font-weight: 400; color: var(--muted); margin-left: 6px; }
+
+.site-nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 15px; }
+.site-nav a { text-decoration: none; color: var(--muted); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] { color: var(--text); border-bottom-color: var(--text); }
+
+/* ---------- Layout ---------- */
+
+main { max-width: var(--page); margin: 0 auto; padding: 52px 16px 32px; }
+[id] { scroll-margin-top: 72px; }  /* in-page links land below the sticky header */
+
+.page-head { margin-bottom: 48px; }
+.page-head.tight { margin-bottom: 20px; }
+h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin: 0 0 10px; letter-spacing: -.02em; }
+.lede { color: var(--muted); margin: 0; max-width: 640px; }
+p { margin: 0 0 14px; }
+.muted { color: var(--muted); }
+
+/* Two-column rows: a label on the left, content on the right.
+   This breaks the single left edge and makes each section easy to find. */
+.row {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, 1fr);
+  gap: 24px;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+}
+.row-label {
+  margin: 0;
+  font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--text);
+  padding-top: 4px;
+}
+.row-label.year { color: var(--text); font-size: 24px; letter-spacing: -.01em; font-variant-numeric: tabular-nums; padding-top: 0; line-height: 1.3; }
+.row-body > :last-child { margin-bottom: 0; }
+
+/* ---------- About ---------- */
+
+.hero { padding-bottom: 56px; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--accent-ink);
+  background: var(--accent-soft); border: 1px solid var(--accent-line);
+  padding: 3px 12px; border-radius: 999px; margin-bottom: 16px;
+}
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+/* Page title, as on the original site: "Zhouyi He | Leibniz Institute of Polymer Research Dresden (IPFDD)" */
+.hero .title { font-size: 36px; font-weight: 700; line-height: 1.25; letter-spacing: -.02em; margin: 0 0 36px; }
+.hero .title-sep { font-weight: 300; color: var(--faint); margin: 0 6px; }
+/* Kept on one line; when it does not fit next to the name it moves below it as a whole
+   (and only wraps inside if it is longer than a whole line) */
+.hero .title-org { display: inline-block; font-weight: 400; font-size: 21px; letter-spacing: 0; }
+
+/* Photo with the academic path beside it; the greeting below */
+.hero-intro { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: center; margin-bottom: 56px; }  /* = the space below the greeting */
+.card-info > :last-child { margin-bottom: 0; }
+.hero-intro.no-photo { grid-template-columns: minmax(0, 1fr); }
+.hero > :last-child { margin-bottom: 0; }  /* whatever ends the hero, when the greeting is left out */
+.hero-intro img { width: 220px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.welcome { margin: 0; font-size: 22px; line-height: 1.6; }
+/* Greeting centred, between big rounded quote marks (decoration only, the text is unchanged) */
+.hero .welcome { position: relative; width: fit-content; max-width: 100%; margin: 0 auto; padding: 10px 56px; text-align: center; }
+.hero .welcome::before, .hero .welcome::after {
+  position: absolute; font: 72px/1 Georgia, "Times New Roman", serif; color: var(--accent);
+}
+.hero .welcome::before { content: "“"; left: 0; top: -6px; }
+.hero .welcome::after { content: "”"; right: 0; bottom: -38px; }
+
+/* Academic path — same styles as the earlier version */
+/* Card styles as in the design before the Jekyll build */
+.roles { list-style: none; margin: 0 0 10px; padding: 0; font-weight: 600; }
+.roles li { margin: 6px 0; line-height: 1.45; }
+.roles .with { display: block; font-weight: 400; font-size: 15px; color: var(--muted); }
+.hero .tagline { margin: 0 0 10px; font-size: 17px; line-height: 1.45; }
+.hero .affiliation { font-size: 15px; color: var(--muted); }
+.education { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+.email { margin: 0 0 14px; font-size: 15px; }
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+.cta .button { padding: 4px 16px; }
+/* Profile links beside View CV: same padding as the button */
+.cta .contact.icons a { padding: 4px 16px; }
+
+.contact { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+.contact.icons { gap: 8px 10px; }
+.contact.icons a { color: var(--muted); text-decoration: none; border: 1px solid var(--rule); border-radius: 4px; padding: 1px 10px; }
+.contact.icons a:hover { color: var(--text); border-color: var(--text); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tags li { font-size: 14px; border: 1px solid var(--rule); border-radius: 999px; padding: 2px 12px; }
+
+
+.more { display: inline-block; margin-top: 4px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.more:hover { text-decoration: underline; }
+
+/* ---------- Publications ---------- */
+
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li { display: grid; grid-template-columns: 36px minmax(0, 1fr); margin-bottom: 26px; }
+.pubs li:last-child { margin-bottom: 0; }
+.pub-n { color: var(--faint); font-size: 14px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.pub-title { font-size: 17px; font-weight: 600; line-height: 1.45; margin-bottom: 4px; }
+.pub-authors { color: var(--muted); font-size: 15px; line-height: 1.4; }
+.pub-authors .me { color: var(--text); font-weight: 700; }
+.pub-venue { font-size: 15px; }
+.pub-summary { font-size: 15px; line-height: 1.55; margin: 6px 0 0; }
+.tag {
+  display: inline-block; vertical-align: 2px; margin-left: 6px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-ink); background: var(--accent-soft); border-radius: 3px; padding: 1px 6px;
+}
+.pub-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.pub-links a { font-size: 14px; text-decoration: none; border: 1px solid var(--rule); padding: 0 8px; border-radius: 3px; }
+.pub-links a:hover { color: var(--text); border-color: var(--text); }
+
+.code-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.card { border: 1px solid var(--rule); border-radius: 8px; padding: 20px 22px; }
+.card .repo { font-size: 18px; font-weight: 700; }
+.card .meta { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.card p { margin: 10px 0 0; }
+.used-in { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--rule); font-size: 14px; color: var(--muted); }
+.used-in span:first-child { font-weight: 700; color: var(--text); }
+
+/* ---------- Resume ---------- */
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 0; }
+.button {
+  display: inline-block; text-decoration: none; font-size: 15px; font-weight: 600;
+  border: 1.5px solid var(--text); padding: 7px 18px; border-radius: 6px;
+}
+.button:hover { opacity: .75; }
+.button.primary { background: var(--text); color: #fff; }
+
+/* Phones and tablets often show only the first page (or nothing) of an embedded
+   PDF, so the "Open in new tab" button is shown only there (see the touch-screen rules below). */
+.pdf-open { display: none; }
+.pdf-frame { width: 100%; height: 85vh; min-height: 520px; border: 1px solid var(--rule); border-radius: 8px; }
+
+/* ---------- Follow (QR codes) ---------- */
+
+.follow { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); gap: 32px; }
+.follow figure { margin: 0; }
+.follow img { width: 100%; aspect-ratio: 1; object-fit: contain; border: 1px solid var(--rule); border-radius: 8px; padding: 10px; background: #fff; }
+.follow figcaption { margin-top: 10px; font-weight: 600; }
+.follow figcaption span { display: block; color: var(--muted); font-size: 14px; font-weight: 400; }
+
+/* ---------- Photography ---------- */
+
+.gallery { columns: 3 240px; column-gap: 10px; }
+.gallery button {
+  position: relative; display: block; width: 100%; margin: 0 0 10px; padding: 0; border: 0;
+  background: #f3f3f3; cursor: zoom-in; break-inside: avoid; overflow: hidden;
+}
+.gallery img { width: 100%; height: auto; }
+.gallery .hover-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 28px 14px 10px; text-align: left;
+  color: #fff; font: 600 14px/1.3 var(--font);
+  background: linear-gradient(transparent, rgba(0, 0, 0, .55));
+  opacity: 0; transition: opacity .2s;
+}
+.gallery button:hover .hover-caption,
+.gallery button:focus-visible .hover-caption { opacity: 1; }
+.gallery button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 10; display: none;
+  background: rgba(255, 255, 255, .97);
+  align-items: center; justify-content: center; flex-direction: column;
+  padding: 56px 16px 24px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 140px); object-fit: contain; }
+.lightbox .caption { margin-top: 14px; font-size: 15px; font-weight: 600; text-align: center; }
+.lightbox .caption a { margin-left: 14px; font-weight: 400; }
+.lb-btn {
+  position: absolute; border: 0; background: none; color: var(--text);
+  font: 28px/1 var(--font); cursor: pointer; padding: 12px;
+}
+.lb-btn:hover { color: var(--accent-ink); }
+.lb-close { top: 8px; right: 12px; }
+.lb-prev, .lb-next {
+  top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; padding: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  color: #fff;
+  background: rgba(20, 20, 20, .42);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
+  transition: background .2s;
+}
+.lb-prev:hover, .lb-next:hover { background: rgba(20, 20, 20, .6); color: #fff; }
+.lb-prev svg, .lb-next svg { display: block; }
+.lb-prev { left: 4px; }
+.lb-next { right: 4px; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  max-width: var(--page); margin: 24px auto 0; padding: 24px 16px 48px;
+  border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+}
+.site-footer .contact { font-size: 14px; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  /* Phones: the nav fits one row; when scrolling, the name slides away and only the nav row stays */
+  .site-header { padding: 24px 16px 10px; top: -51px; }
+  .site-nav { flex-wrap: nowrap; gap: 18px; font-size: 14px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+  .site-nav a { padding-bottom: 1px; }
+  main { padding-top: 30px; }
+  h1 { font-size: 30px; }
+  .hero { padding-bottom: 40px; }
+  .hero .title { font-size: 30px; margin-bottom: 24px; }
+  .hero .title-sep { display: none; }
+  .hero .title-org { display: block; font-size: 19px; margin-top: 6px; white-space: normal; }
+  .hero-intro { grid-template-columns: 1fr; gap: 20px; }
+  .hero-intro img { width: 150px; }
+  .welcome { font-size: 17px; }
+  .hero .welcome { padding: 8px 36px; }
+  .hero .welcome::before, .hero .welcome::after { font-size: 48px; }
+  .hero .welcome::after { bottom: -26px; }
+  .row { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+  .follow { gap: 20px; }
+  .gallery .hover-caption { opacity: 1; padding-top: 20px; font-size: 13px; }
+  .lb-prev, .lb-next { top: auto; bottom: 8px; transform: none; }
+}
+
+/* Touch screens have no hover: keep captions visible there, and offer the CV in a new tab. */
+@media (hover: none) {
+  .gallery .hover-caption { opacity: 1; }
+  .pdf-open { display: flex; }
+}

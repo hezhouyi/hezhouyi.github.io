@@ -1,0 +1,13 @@
+# The site's name, titles and descriptions are in content/site.md and content/seo.md.
+url: https://hezhouyi.github.io
+baseurl: ""
+
+# This folder holds only the Jekyll pages. The public files from the repository
+# root (image/, PDFs, code folders…) are added at the same paths by
+# _plugins/root_files.rb. scripts/build_site.sh first makes the gallery
+# thumbnails and the web version of the photo, then runs Jekyll here.
+exclude:
+  - assets/gallery/manifest.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor

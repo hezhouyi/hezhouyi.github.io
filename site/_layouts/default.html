@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- comment %} Names and links come from content/site.md; titles and descriptions from content/seo.md. {%- endcomment %}
+{%- assign s = site.data.content.site %}
+{%- assign seo = site.data.content.seo %}
+{%- assign key = page.name | remove: ".html" %}{% if key == "index" %}{% assign key = "home" %}{% endif %}
+{%- assign page_seo = seo.pages[key] %}
+{%- if page_seo.title %}{% assign full_title = page_seo.title %}{% elsif page.title and s.name %}{% assign full_title = page.title | append: " · " | append: s.name %}{% else %}{% assign full_title = page.title | default: s.name %}{% endif %}
+{%- assign description = page_seo.description | default: seo.description | strip | escape %}
+<title>{{ full_title }}</title>
+{%- if description != "" %}
+<meta name="description" content="{{ description }}">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+{%- comment %} Link previews on LinkedIn, Slack, WeChat, X … {%- endcomment %}
+<meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+{%- if s.name %}
+<meta property="og:site_name" content="{{ s.name | escape }}">
+{%- endif %}
+<meta property="og:title" content="{{ full_title | escape }}">
+{%- if description != "" %}
+<meta property="og:description" content="{{ description }}">
+{%- endif %}
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{%- if site.data.generated.portrait %}
+<meta property="og:image" content="{{ '/assets/img/portrait.jpg' | absolute_url }}">
+{%- if seo.image_alt %}
+<meta property="og:image:alt" content="{{ seo.image_alt | escape }}">
+{%- endif %}
+{%- endif %}
+<meta name="twitter:card" content="summary">
+{%- if page.url == "/" %}
+{% include person-jsonld.html %}
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+{%- assign nav = "/|About,/resume.html|Resume,/publications.html|Publications &amp; Code,/photography.html|Photography" | split: "," %}
+<header class="site-header">
+  <a class="site-title" href="{{ '/' | relative_url }}">{{ s.name | escape }}{% if s.name_cn %}<span class="cn">{{ s.name_cn | escape }}</span>{% endif %}</a>
+  <nav class="site-nav">
+    {%- for item in nav %}
+      {%- assign parts = item | split: "|" %}
+    <a href="{{ parts[0] | relative_url }}"{% if page.url == parts[0] %} aria-current="page"{% endif %}>{{ parts[1] }}</a>
+    {%- endfor %}
+  </nav>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer class="site-footer">
+  <span>© {{ site.time | date: "%Y" }}{% if s.name %} {{ s.name | escape }}{% endif %}</span>
+  {%- assign links = s.footer_links | where_exp: "l", "l.label" %}
+  {%- if links.size > 0 %}
+  <span class="contact">
+    {%- for l in links %}
+    <a href="{{ l.link | link | relative_url | escape }}">{{ l.label | escape }}</a>
+    {%- endfor %}
+  </span>
+  {%- endif %}
+</footer>
+
+{%- for script in page.scripts %}
+<script src="{{ script | relative_url }}"></script>
+{%- endfor %}
+</body>
+</html>

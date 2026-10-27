@@ -1,0 +1,19 @@
+# Jekyll output and caches
+site/_site/
+site/.jekyll-cache/
+site/.jekyll-metadata
+site/vendor/
+site/.bundle/
+
+# Made at build time by scripts/build_site.sh — never committed
+site/assets/gallery/
+site/_data/generated/
+site/assets/img/portrait.jpg
+
+# Design drafts: generated thumbnails
+draft/thumbs/
+
+# Python bytecode caches (from running the scripts locally)
+__pycache__/
+
+.DS_Store

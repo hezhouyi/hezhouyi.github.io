@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+
+# Needed by `jekyll serve` on Ruby 3+ (local preview only)
+gem "webrick", "~> 1.9"
