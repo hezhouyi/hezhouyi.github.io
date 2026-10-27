@@ -1,0 +1,34 @@
+---
+layout: default
+title: Photography
+scripts:
+  - /assets/js/gallery.js
+---
+  {%- comment -%}
+    Photos are every image in the folder set in content/photography.md. scripts/build_gallery.py (run by the
+    deploy workflow) makes the thumbnails and _data/generated/photos.json.
+  {%- endcomment -%}
+  <div class="page-head">
+    <h1>Photography</h1>
+    {%- if site.data.content.photography.intro %}
+    <p class="lede">{{ site.data.content.photography.intro | inline_md }}</p>
+    {%- endif %}
+  </div>
+
+  <div class="gallery">
+    {%- for photo in site.data.generated.photos %}
+    <button type="button" style="aspect-ratio: {{ photo.width }} / {{ photo.height }}"
+            data-large="{{ photo.large | relative_url | escape }}" data-original="{{ photo.original | relative_url | escape }}" data-caption="{{ photo.caption | escape }}">
+      <img src="{{ photo.thumb | relative_url | escape }}" width="{{ photo.width }}" height="{{ photo.height }}" loading="lazy" alt="{{ photo.caption | escape }}">
+      <span class="hover-caption">{{ photo.caption | escape }}</span>
+    </button>
+    {%- endfor %}
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" aria-label="Close">×</button>
+    <button class="lb-btn lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="lb-btn lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <img alt="">
+    <div class="caption"><span></span><a target="_blank" rel="noopener">Original ↗</a></div>
+  </div>

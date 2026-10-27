@@ -1,0 +1,82 @@
+---
+layout: default
+title: Publications & Code
+---
+  {%- assign codes = site.data.content.code.code %}
+  <div class="page-head">
+    <h1>Publications &amp; Code</h1>
+    {%- assign intro = site.data.content.publications.intro %}
+    {%- if intro or codes %}
+    <p class="lede">
+      {%- if intro %}
+      {{ intro | inline_md }}
+      {%- endif %}
+      {%- if codes %}
+      Code used in a paper is linked under it and collected in <a href="#code">Code</a>.
+      {%- endif %}
+    </p>
+    {%- endif %}
+  </div>
+
+  {%- comment -%} Papers come from content/publications.md, newest first; a new year starts a new row. {%- endcomment -%}
+  {%- assign pubs = site.data.content.publications.publications %}
+  {%- assign total = pubs | size %}
+  {%- for p in pubs %}
+    {%- assign n = total | minus: forloop.index0 %}
+    {%- if p.year != prev_year %}
+      {%- unless forloop.first %}
+    </ol>
+  </section>
+      {%- endunless %}
+  <section class="row">
+    <h2 class="row-label year">{{ p.year }}</h2>
+    <ol class="pubs">
+    {%- endif %}
+      {% include publication.html pub=p n=n links=true summary=true %}
+    {%- assign prev_year = p.year %}
+    {%- if forloop.last %}
+    </ol>
+  </section>
+    {%- endif %}
+  {%- endfor %}
+
+  {%- if codes %}
+
+  <section class="row" id="code">
+    <h2 class="row-label">Code</h2>
+    <ul class="code-list row-body">
+      {%- for c in codes %}
+      <li class="card">
+        <span class="repo">{{ c.name | escape }}</span>
+        {%- if c.languages %}
+        <span class="meta">{{ c.languages | escape }}</span>
+        {%- endif %}
+        {%- if c.description %}
+        <p>{{ c.description | escape }}</p>
+        {%- endif %}
+        {%- if c.url or c.docs %}
+        <div class="pub-links">
+          {%- if c.url %}
+          <a target="_blank" rel="noopener" href="{{ c.url | link | relative_url }}">Source ↗</a>
+          {%- endif %}
+          {%- if c.docs %}
+          <a target="_blank" rel="noopener" href="{{ c.docs | link | relative_url }}">Documentation ↗</a>
+          {%- endif %}
+        </div>
+        {%- endif %}
+        {%- capture used %}
+          {%- for p in pubs %}
+            {%- if p.code contains c.id %}
+              {%- assign n = total | minus: forloop.index0 -%}
+              <span>[{{ n }}] {{ p.venue | split: "," | first | escape }} {{ p.year }}</span>
+            {%- endif %}
+          {%- endfor %}
+        {%- endcapture %}
+        {%- if used != "" %}
+        <div class="used-in"><span>Used in</span>{{ used }}</div>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif %}

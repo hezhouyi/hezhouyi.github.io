@@ -1,0 +1,158 @@
+---
+layout: default
+---
+{%- comment -%}
+  All text on this page comes from content/about.md. Anything left out there
+  (deleted or "") leaves no trace here: no empty row, separator or box.
+{%- endcomment -%}
+{%- assign a = site.data.content.about %}
+{%- assign photo = site.data.generated.portrait %}
+  <section class="hero">
+    {%- if a.status %}
+    <span class="status">{{ a.status | escape }}</span>
+    {%- endif %}
+    {%- if a.name or a.affiliation %}
+    <h1 class="title">{{ a.name | escape }}
+      {%- if a.name and a.affiliation %}
+      <span class="title-sep">|</span>
+      {%- endif %}
+      {%- if a.affiliation %} <span class="title-org">{{ a.affiliation | escape }}</span>{% endif %}</h1>
+    {%- endif %}
+
+    {%- assign buttons = a.buttons | where_exp: "b", "b.label" %}
+    {%- capture card %}
+        {%- if a.positions %}
+        <ul class="roles">
+          {%- for p in a.positions %}
+          {%- if p.title or p.with %}
+          <li>
+            {{ p.title | inline_md }}
+            {%- if p.with %}
+            <span class="with">{{ p.with | inline_md }}</span>
+            {%- endif %}
+          </li>
+          {%- endif %}
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+        {%- if a.research or a.institute %}
+        <p class="tagline">{{ a.research | inline_md }}{% if a.research and a.institute %}<br>{% endif %}
+          {%- if a.institute %}
+          <span class="affiliation">{{ a.institute | inline_md }}</span>
+          {%- endif %}</p>
+        {%- endif %}
+        {%- if a.education %}
+        <p class="education">{{ a.education | inline_md }}</p>
+        {%- endif %}
+        {%- if a.email %}
+        <p class="email">{{ a.email | inline_md }}</p>
+        {%- endif %}
+        {%- if buttons.size > 0 %}
+        <div class="cta">
+          {%- for b in buttons %}
+            {%- assign url = b.link | link | relative_url %}
+            {%- if forloop.first %}
+          <a class="button primary" href="{{ url | escape }}">{{ b.label | escape }}</a>
+            {%- if buttons.size > 1 %}
+          <div class="contact icons">
+            {%- endif %}
+            {%- else %}
+            <a href="{{ url | escape }}">{{ b.label | escape }}{% if b.link contains "://" %} ↗{% endif %}</a>
+            {%- endif %}
+          {%- endfor %}
+          {%- if buttons.size > 1 %}
+          </div>
+          {%- endif %}
+        </div>
+        {%- endif %}
+    {%- endcapture %}
+    {%- assign card = card | strip %}
+
+    {%- if photo or card != "" %}
+
+    <div class="hero-intro{% unless photo %} no-photo{% endunless %}">
+      {%- if photo %}
+      <img src="{{ '/assets/img/portrait.jpg' | relative_url }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ a.photo_alt | default: a.name | escape }}">
+      {%- endif %}
+      {%- if card != "" %}
+      <div class="card-info">
+        {{ card }}
+      </div>
+      {%- endif %}
+    </div>
+    {%- endif %}
+
+    {%- if a.greeting %}
+
+    <p class="welcome">{{ a.greeting | strip | inline_md }}</p>
+    {%- endif %}
+  </section>
+
+  {%- if a.body %}
+
+  <section class="row">
+    <h2 class="row-label">About</h2>
+    <div class="row-body">
+      {{ a.body | lines_md }}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if a.interests %}
+
+  <section class="row">
+    <h2 class="row-label">Interests</h2>
+    <div class="row-body">
+      <ul class="tags">
+        {%- for i in a.interests %}
+        <li>{{ i | inline_md }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- assign pubs = site.data.content.publications.publications %}
+  {%- if pubs %}
+
+  <section class="row">
+    <h2 class="row-label">Recent work</h2>
+    <div class="row-body">
+      {%- assign total = pubs | size %}
+      <ol class="pubs">
+        {%- for p in pubs limit: 3 %}
+          {%- assign n = total | minus: forloop.index0 %}
+          {% include publication.html pub=p n=n links=true %}
+        {%- endfor %}
+      </ol>
+      <p style="margin-top:24px"><a class="more" href="{{ '/publications.html' | relative_url }}">All publications and code →</a></p>
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if a.elsewhere %}
+
+  <section class="row">
+    <h2 class="row-label">Elsewhere</h2>
+    <div class="row-body follow">
+      {%- for e in a.elsewhere %}
+        {%- unless e.qrcode or e.label or e.note %}{% continue %}{% endunless %}
+        {%- assign img = e.qrcode | link | relative_url %}
+        {%- assign href = e.link | link | relative_url %}
+        {%- capture caption %}{% if e.label %}{% if e.link %}<a href="{{ href | escape }}">{{ e.label | escape }}</a>{% else %}{{ e.label | escape }}{% endif %}{% endif %}{% if e.note %}<span>{{ e.note | inline_md }}</span>{% endif %}{% endcapture %}
+      <figure>
+        {%- if e.qrcode %}
+        {%- if e.link %}
+        <a href="{{ href | escape }}"><img src="{{ img }}" alt="{{ e.alt | default: e.label | escape }}"></a>
+        {%- else %}
+        <img src="{{ img }}" alt="{{ e.alt | default: e.label | escape }}">
+        {%- endif %}
+        {%- endif %}
+        {%- if caption != "" %}
+        <figcaption>{{ caption }}</figcaption>
+        {%- endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}

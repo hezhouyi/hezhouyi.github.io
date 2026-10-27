@@ -1,0 +1,82 @@
+# Builds the site on every push. Only pushes to master are published.
+#
+# One-time setup (repository owner): Settings → Pages → Build and deployment →
+# Source: "GitHub Actions".
+name: Build and deploy site
+
+on:
+  push:
+    branches: [master, dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full commit history (for the CV "Last updated" date) without
+          # downloading old file versions.
+          fetch-depth: 0
+          filter: blob:none
+
+      # ---- Gallery thumbnails (made here, never committed) ----
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+
+      # Stops here, with the problems explained at the top of the run's page,
+      # if something in content/ is wrong. The site online stays as it was.
+      - name: Check the files in content/
+        run: python scripts/check_content.py
+
+      - name: Restore gallery images from earlier runs
+        uses: actions/cache@v6
+        with:
+          path: site/assets/gallery
+          key: gallery-${{ github.run_id }}
+          restore-keys: gallery-
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: site
+
+      - name: Build site
+        run: bash scripts/build_site.sh
+        env:
+          JEKYLL_ENV: production
+          # hezhouyi/hezhouyi.github.io is served at the root of hezhouyi.github.io;
+          # a fork (e.g. for a preview) is served at <owner>.github.io/<repository>/
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+          BASEURL: ${{ github.event.repository.name != format('{0}.github.io', github.repository_owner) && format('/{0}', github.event.repository.name) || '' }}
+
+      - name: Upload site
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/_site
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

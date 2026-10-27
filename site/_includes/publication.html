@@ -1,0 +1,46 @@
+{%- comment -%}
+  One publication entry.
+  include.pub    an entry of content/publications.md
+  include.n      its number in the reference list
+  include.links  show the DOI / PDF / Data / Code buttons
+  include.summary  show the paper's summary (Publications page only)
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign authors = p.authors | escape -%}
+{%- for name in site.data.content.publications.highlight -%}
+  {%- assign plain = name | escape -%}
+  {%- assign bold = '<strong class="me">' | append: plain | append: '</strong>' -%}
+  {%- assign authors = authors | replace: plain, bold -%}
+{%- endfor -%}
+<li>
+  <span class="pub-n">[{{ include.n }}]</span>
+  <div>
+    <div class="pub-title">{{ p.title | escape }}{% if p.status %} <span class="tag">{{ p.status | escape }}</span>{% endif %}</div>
+    {%- if p.authors %}
+    <div class="pub-authors">{{ authors }}</div>
+    {%- endif %}
+    {%- if p.venue or p.volume or p.pages or p.year %}
+    <div class="pub-venue">
+      {%- if p.venue %}{% if p.status == "Thesis" %}{{ p.venue | escape }}{% else %}<em>{{ p.venue | escape }}</em>{% endif %}{% endif -%}
+      {%- if p.volume %} <b>{{ p.volume }}</b>{% if p.issue %}({{ p.issue }}){% endif %}{% endif -%}
+      {%- if p.pages %}, {{ p.pages }}{% endif %}{% if p.year %} ({{ p.year }}){% endif %}</div>
+    {%- endif %}
+    {%- if include.summary and p.summary %}
+    <p class="pub-summary">{{ p.summary | summary_md }}</p>
+    {%- endif %}
+    {%- if include.links %}
+    {%- capture links -%}
+      {%- if p.doi %}<a target="_blank" rel="noopener" href="https://doi.org/{{ p.doi }}">DOI ↗</a>{% endif -%}
+      {%- if p.pdf %}<a target="_blank" rel="noopener" href="{{ p.pdf | link | relative_url }}">PDF ↗</a>{% endif -%}
+      {%- if p.data %}<a target="_blank" rel="noopener" href="{{ p.data | link | relative_url }}">Data ↗</a>{% endif -%}
+      {%- for id in p.code -%}
+        {%- assign c = site.data.content.code.code | where: "id", id | first -%}
+        {%- if c.url %}<a target="_blank" rel="noopener" href="{{ c.url | link | relative_url }}">Code ↗</a>{% endif -%}
+      {%- endfor -%}
+    {%- endcapture %}
+    {%- if links != "" %}
+    <div class="pub-links">{{ links }}</div>
+    {%- endif %}
+    {%- endif %}
+  </div>
+</li>
