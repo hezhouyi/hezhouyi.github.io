@@ -59,6 +59,10 @@ jobs:
         run: bash scripts/build_site.sh
         env:
           JEKYLL_ENV: production
+          # hezhouyi/hezhouyi.github.io is served at the root of hezhouyi.github.io;
+          # a fork (e.g. for a preview) is served at <owner>.github.io/<repository>/
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+          BASEURL: ${{ github.event.repository.name != format('{0}.github.io', github.repository_owner) && format('/{0}', github.event.repository.name) || '' }}
 
       - name: Upload site
         if: github.ref == 'refs/heads/master'

@@ -15,6 +15,9 @@
 <meta name="description" content="{{ description }}">
 {%- endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if site.baseurl != "" %}
+<meta name="robots" content="noindex">{% comment %} a preview copy, not the real site {% endcomment %}
+{%- endif %}
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48">
 <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">

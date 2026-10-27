@@ -4,6 +4,7 @@ site/.jekyll-cache/
 site/.jekyll-metadata
 site/vendor/
 site/.bundle/
+site/.build-override.yml
 
 # Made at build time by scripts/build_site.sh — never committed
 site/assets/gallery/

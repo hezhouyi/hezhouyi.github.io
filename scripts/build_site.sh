@@ -20,8 +20,17 @@ echo "cv_updated: $(git log -1 --format=%cs -- "$cv_pdf")" > site/_data/generate
 
 # 3. Jekyll pages, plus the public files from the repository root at the same
 #    paths as in the repository (photos, CV PDF, profile.jpg, code folders, …;
-#    see site/_plugins/root_files.rb)
-(cd site && bundle exec jekyll build)
+#    see site/_plugins/root_files.rb).
+#    SITE_URL / BASEURL (set by the workflow) publish the site somewhere else than
+#    hezhouyi.github.io, e.g. a preview in a fork at yuying-jin.github.io/<repository>.
+config=_config.yml
+if [ -n "${SITE_URL:-}${BASEURL:-}" ]; then
+  printf 'url: "%s"
+baseurl: "%s"
+' "${SITE_URL:-https://hezhouyi.github.io}" "${BASEURL:-}" > site/.build-override.yml
+  config=_config.yml,.build-override.yml
+fi
+(cd site && bundle exec jekyll build --config "$config")
 
 # 4. Title and author in the published CV's PDF metadata (for search results)
 python scripts/set_pdf_metadata.py

@@ -120,12 +120,16 @@ end
 Liquid::Template.register_filter(ContentFolder::Filters)
 
 # Links to other websites open in a new tab, wherever they come from; links to
-# this site written in Markdown text ([text](/Zhouyi He.pdf)) get their spaces encoded.
+# this site written in Markdown text ([text](/Zhouyi He.pdf)) get their spaces
+# encoded, and the site's path prefix when it is not at the root (a preview).
 Jekyll::Hooks.register :pages, :post_render do |page|
   next unless page.output_ext == ".html"
 
-  page.output = page.output.gsub(%r{(<a href=")(/[^"]*)"}) do
-    %(#{Regexp.last_match(1)}#{ContentFolder.encode_path(Regexp.last_match(2))}")
+  base = page.site.baseurl.to_s.chomp("/")
+  page.output = page.output.gsub(%r{(<a href="|<img src=")(/[^"]*)"}) do
+    path = Regexp.last_match(2)
+    path = base + path unless base.empty? || path == base || path.start_with?("#{base}/")
+    %(#{Regexp.last_match(1)}#{ContentFolder.encode_path(path)}")
   end
   page.output = page.output.gsub(/<a href="(https?:[^"]*)"(?![^>]*\btarget=)/) do
     %(<a href="#{Regexp.last_match(1)}" target="_blank" rel="noopener")
