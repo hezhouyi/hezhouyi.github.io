@@ -24,6 +24,7 @@ echo "cv_updated: $(git log -1 --format=%cs -- "$cv_pdf")" > site/_data/generate
 #    SITE_URL / BASEURL (set by the workflow) publish the site somewhere else than
 #    hezhouyi.github.io, e.g. a preview in a fork at yuying-jin.github.io/<repository>.
 config=_config.yml
+SITE_URL="$(printf '%s' "${SITE_URL:-}" | tr 'A-Z' 'a-z')"  # GitHub user names may have capitals; addresses are lower case
 if [ -n "${SITE_URL:-}${BASEURL:-}" ]; then
   printf 'url: "%s"
 baseurl: "%s"
