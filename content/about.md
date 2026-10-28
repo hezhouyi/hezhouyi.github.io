@@ -4,7 +4,12 @@
 # The About text is below the closing --- line. To leave something out, write "".
 
 # Green badge above the title ("" hides it)
-status: "Open to postdoc and teaching positions · Starting from Spring 2027"
+status: "Open to postdoc and teaching positions · Spring 2027"
+
+# Greeting below the photo
+greeting: |
+  Welcome to my personal homepage!
+  'Hakuna matata! It's our problem-free philosophy.'
 
 # Title
 name: "Zhouyi He"
@@ -36,11 +41,6 @@ buttons:
   - label: "LinkedIn"
     link: "https://www.linkedin.com/in/zhouyi-he-8620a019b/"
 
-# Greeting below the photo
-greeting: |
-  Welcome to my personal homepage!
-  'Hakuna matata! It's our problem-free philosophy.'
-
 # "Interests" row
 interests:
   - "Theoretical Biophysics"
@@ -59,6 +59,7 @@ elsewhere:
     alt: "QR code for the Bilibili video channel"
     link: "https://space.bilibili.com/29220744/video"
 ---
-I am currently a doctoral student at the IPFDD, working with [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en) and [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en).
+I am currently a doctoral student with [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en) and [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en).
 I was also a visiting scholar in [Prof. Eugene Shakhnovich](https://scholar.google.com/citations?hl=en&user=h8dta2MAAAAJ)’s [group](https://shakhnovich.faculty.chemistry.harvard.edu) at [Harvard CCB](https://www.chemistry.harvard.edu) in Fall 2025.
+Prior to my PhD, I studied Chemical Physics at USTC and Theoretical Biophysics at HKUST. 
 I am broadly interested in biological physics and currently looking for a Postdoc position starting from Spring 2027!
