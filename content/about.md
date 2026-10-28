@@ -63,7 +63,7 @@ elsewhere:
 ---
 <!--About-->
   - I grew up in Hunan, where people are famous for being hot (loving spicy food)!
-  - I am currently a PhD student working with [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en) and [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en).
+  - I am currently working with [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en) and [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en).
   - I was a visiting scholar in [Prof. Eugene Shakhnovich’s group](https://shakhnovich.faculty.chemistry.harvard.edu) at Harvard.
   - Prior to my PhD, I worked on computational solid-state physics and theoretical modeling of the CRISPR Cas and the SARS-CoV-2 spike protein.
   - I am broadly interested in biological physics and am currently looking for a postdoctoral position starting in spring 2027!
