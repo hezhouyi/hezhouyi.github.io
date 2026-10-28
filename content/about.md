@@ -4,11 +4,11 @@
 # The About text is below the closing --- line. To leave something out, write "".
 
 # Green badge above the title ("" hides it)
-status: "Seeking postdoc positions · Fall 2026"
+status: "Open to postdoc and teaching positions · Starting from Spring 2027"
 
 # Title
 name: "Zhouyi He"
-affiliation: "Leibniz Institute of Polymer Research Dresden (IPFDD)"
+affiliation: "Leibniz Institute of Polymer Research Dresden"
 
 # Photo (any size) and a short description of it
 photo: "/profile.jpg"
@@ -16,9 +16,9 @@ photo_alt: "Zhouyi He in front of MIT's Great Dome"
 
 # Card next to the photo
 positions:
-  - title: "[Doctoral Student in Physics](https://www.ipfdd.de/en/organization/organization-chart/personal-homepages/zhouyi-he/), [IPFDD](https://www.ipfdd.de/en/home/) & [TU Dresden](https://tu-dresden.de/?set_language=en)"
+  - title: "[Doctoral Student in Physics, 3/2023 - 3/2027](https://www.ipfdd.de/en/organization/organization-chart/personal-homepages/zhouyi-he/), [IPFDD](https://www.ipfdd.de/en/home/) & [TU Dresden](https://tu-dresden.de/?set_language=en)"
     # with: "with Prof. Jens-Uwe Sommer & Dr. Tyler Harmon"
-  - title: "[Visiting Scholar](https://shakhnovich.faculty.chemistry.harvard.edu/people/zhouyi-he), [Harvard University](https://www.harvard.edu)"
+  - title: "[Visiting Scholar, Fall 2025](https://shakhnovich.faculty.chemistry.harvard.edu/people/zhouyi-he), [Harvard University](https://www.harvard.edu)"
     # with: "with Prof. Eugene Shakhnovich"
 research: "Simulation and theory of biomolecular condensates"
 institute: "[Leibniz Institute of Polymer Research Dresden](https://www.ipfdd.de/)"
@@ -45,7 +45,7 @@ greeting: |
 interests:
   - "Theoretical Biophysics"
   - "Soft Matter Physics"
-  - "Chemical Physics"
+  - "Quantitative Biology"
 
 # "Elsewhere" row: QR codes ("link" is optional)
 elsewhere:
@@ -60,5 +60,5 @@ elsewhere:
     link: "https://space.bilibili.com/29220744/video"
 ---
 I am currently a doctoral student at the IPFDD, working with [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en) and [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en).
-I am also presently a visiting scholar in [Prof. Eugene Shakhnovich](https://scholar.google.com/citations?hl=en&user=h8dta2MAAAAJ)’s [group](https://shakhnovich.faculty.chemistry.harvard.edu) at [Harvard CCB](https://www.chemistry.harvard.edu).
-I am broadly interested in biological physics and currently looking for a Postdoc position starting from Fall 2026!
+I was also a visiting scholar in [Prof. Eugene Shakhnovich](https://scholar.google.com/citations?hl=en&user=h8dta2MAAAAJ)’s [group](https://shakhnovich.faculty.chemistry.harvard.edu) at [Harvard CCB](https://www.chemistry.harvard.edu) in Fall 2025.
+I am broadly interested in biological physics and currently looking for a Postdoc position starting from Spring 2027!
