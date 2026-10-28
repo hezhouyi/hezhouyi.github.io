@@ -62,10 +62,10 @@ elsewhere:
     link: "https://space.bilibili.com/29220744/video"
 ---
 <!--About-->
-  - I grew up in Hunan, China, where people are famous for being spicy (loving spicy food)!
+  - I grew up in Hunan, China, where people are famous for being hot (loving spicy food)!
   - I am currently a PhD student working with [Dr. Tyler Harmon](https://scholar.google.com/citations?user=p1uSnH0AAAAJ&hl=en) and [Prof. Jens-Uwe Sommer](https://scholar.google.com/citations?user=ZyejzqgAAAAJ&hl=en).
   - In fall 2025, I was a visiting scholar in [Prof. Eugene Shakhnovich’s group](https://shakhnovich.faculty.chemistry.harvard.edu) at Harvard.
-  - Before starting my PhD, I worked on computational solid-state physics and theoretical modeling of the CRISPR-Cas9 system and the SARS-CoV-2 spike protein.
+  - Prior to my PhD, I worked on computational solid-state physics and theoretical modeling of the CRISPR Cas and the SARS-CoV-2 spike protein.
   - I am broadly interested in biological physics and am currently looking for a postdoctoral position starting in spring 2027!
   - Outside research, I enjoy exploring the world and immersing myself in art.
   - I love traveling in Europe, camping in [Saxon Switzerland](https://www.saechsische-schweiz.de/en) near Dresden, and I used to hike a lot along the trails in Hong Kong.
